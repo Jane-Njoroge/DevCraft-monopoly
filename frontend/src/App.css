@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.shadow-background {
+  background-image: url("https://media.gettyimages.com/id/458577337/photo/monopoly-board-game-box.jpg?s=612x612&w=gi&k=20&c=oiSBvkEgD12_mHkKsySTbZPZ44RQaNOQiMwkS8TsMWk="); 
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  height: 100vh; /* Full height of the viewport */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  position: relative; /* Positioning context for pseudo-elements if needed */
+}
+
+.shadow-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("path/to/your/image.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Blurs only the image */
+  z-index: -1; /* Places it behind other content */
+}
+
+.text {
+  position: relative; /* Ensures text appears above blurred background */
+  color: white; /* Text color */
+  padding: 20px; /* Adds some padding around the text */
+}

@@ -1,0 +1,23 @@
+.newgame-page{
+    background-image: url(monopoly-madness.png);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.newgame-btn{
+    margin-top: 550px;
+    width: 500px;
+    height: 60px;
+    background-color: #31e35d;
+    color: rgb(218, 4, 4);
+    font-style: italic;
+    border: none;
+}
+.newgame-btn:hover{
+    background-color: #790505;
+
+}
