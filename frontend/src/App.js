@@ -7,6 +7,10 @@ import ForgotPassword from "./pages/ForgotPassword";
 import LoadingScreen from "./pages/LoadingScreen";
 import AddPlayerPage from "./pages/AddPlayerPage";
 import NewGamePage from "./pages/NewGamePage"
+import PlayerInfo from "./components/PlayerInfo";
+import RaceCar from "./components/RaceCar";
+import MonopolyTimer from "./components/MonopolyTimer";
+
 //import MonopolyPage from "./MonopolyPage"
 
 
@@ -21,7 +25,21 @@ function App() {
           <Route path="forgot-password" element={<ForgotPassword/>}/>
          <Route path='/loading' element={<LoadingScreen/>}/>  
           <Route path='/add-player' element={<AddPlayerPage/>}/>
-         <Route path='/new-game' element={<NewGamePage/>}/> 
+         <Route path='/new-game' element={<NewGamePage/>}/>
+        {/* <Route path="/"element={<PlayerInfo/>}/>
+        <Route path="" element={<PlayerInfo />}/>
+         <Route path="" element={<RaceCar />}/>
+         <Route path="" element={<MonopolyTimer />}/> */}
+        <Route
+          path="/game-board"
+          element={
+            <>
+              <PlayerInfo />
+              <RaceCar />
+              <MonopolyTimer />
+            </>
+          }
+        />
         </Routes>
       </Router>
 

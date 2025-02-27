@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './addplayer.css'
+import { useNavigate } from 'react-router-dom';
 
 const AddPlayerPage = () => {
     const [players,setPlayers] = useState(['VAN']);
@@ -23,8 +24,11 @@ const AddPlayerPage = () => {
         console.log('Rules button clicked!');
         
     };
+     
 
-    const handlePlay = () => {
+    const navigate = useNavigate();
+        const handlePlay = () => {
+        navigate('/game-board')
         console.log('Play button clicked');
         
     };
