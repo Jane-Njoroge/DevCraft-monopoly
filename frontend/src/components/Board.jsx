@@ -1,78 +1,186 @@
-import React from 'react';
+import React from "react";
 
 const Board = () => {
   return (
-    <div style={{
-      position: 'absolute',
-      top: '0px',
-      right: '0px',
-      display: 'flex',
-      flexDirection: 'column',
-      border: '1px solid black',
-      width: '770px',
-    }}>
-     
-      <div style={{ display: 'flex' }}>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>FREE PARKING</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'red', fontSize: '10px', lineHeight: '1.2' }}>Kentucky<br />$220</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Chance</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'red', fontSize: '10px', lineHeight: '1.2' }}>Indiana<br />$220</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Illinois<br />$240</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>B&O<br />$200</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'yellow', fontSize: '10px', lineHeight: '1.2' }}>Atlantic<br />$260</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Ventnor<br />$260</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Water<br />$150</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'green', fontSize: '10px', lineHeight: '1.2' }}>Marvin<br />$280</div>
+    <div className="monopoly-board">
+      {/* Top Row */}
+      <div className="row">
+        <div className="corner go">GO 🚗</div>
+        <div className="property brown">Mediterranean Ave<br />$60</div>
+        <div className="community-chest">🎁<br />Community Chest</div>
+        <div className="property brown">Baltic Ave<br />$60</div>
+        <div className="tax">💰<br />Income Tax</div>
+        <div className="railroad">🚂<br />Reading RR</div>
+        <div className="property light-blue">Oriental Ave<br />$100</div>
+        <div className="chance">❓<br />Chance</div>
+        <div className="property light-blue">Vermont Ave<br />$100</div>
+        <div className="property light-blue">Connecticut Ave<br />$120</div>
+        <div className="corner jail">🚔<br />Jail</div>
       </div>
 
-      <div style={{ display: 'flex' }}>
-       
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'orange', fontSize: '10px', lineHeight: '1.2' }}>New York<br />$200</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'orange', fontSize: '10px', lineHeight: '1.2' }}>Tennessee<br />$180</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Community</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'orange', fontSize: '10px', lineHeight: '1.2' }}>St. James<br />$180</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Pennsylvania<br />$200</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'fuchsia', fontSize: '10px', lineHeight: '1.2' }}>Virginia<br />$160</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>States<br />$140</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Electric<br />$150</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'fuchsia', fontSize: '10px', lineHeight: '1.2' }}>St. Charles<br />$140</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Just Visiting</div>
+      {/* Middle Section */}
+      <div className="middle">
+        <div className="column">
+          <div className="property purple">St. Charles Pl<br />$140</div>
+          <div className="utility">💡<br />Electric Co.</div>
+          <div className="property purple">States Ave<br />$140</div>
+          <div className="property purple">Virginia Ave<br />$160</div>
+          <div className="railroad">🚂<br />Pennsylvania RR</div>
+          <div className="property orange">St. James Pl<br />$180</div>
+          <div className="community-chest">🎁<br />Community Chest</div>
+          <div className="property orange">Tennessee Ave<br />$180</div>
+          <div className="property orange">New York Ave<br />$200</div>
         </div>
 
-        <div style={{ width: '570px', height: '570px' }}>
-          <button>New game</button>
-          <button>Roll the dice</button>
-          <button>Trade with Player 2</button>
-          <button>Trade with Player 3</button>
+        {/* Center Area */}
+        <div className="center">
+          <div className="card chance-card">❓ Chance</div>
+          <div className="card community-card">🎁 Community Chest</div>
+          <button className="btn roll">🎲 Roll Dice</button>
+          <button className="btn start">🚀 Start Game</button>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Go to Jail</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'green', fontSize: '10px', lineHeight: '1.2' }}>Pacific<br />$300</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'green', fontSize: '10px', lineHeight: '1.2' }}>North Carolina<br />$300</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Community</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'green', fontSize: '10px', lineHeight: '1.2' }}>Pennsylvania<br />$320</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Short Line<br />$200</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Chance</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'blue', fontSize: '10px', lineHeight: '1.2' }}>Park Place<br />$350</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Luxury Tax<br />$75</div>
-          <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'blue', fontSize: '10px', lineHeight: '1.2' }}>Boardwalk<br />$400</div>
+        <div className="column">
+          <div className="property red">Kentucky Ave<br />$220</div>
+          <div className="chance">❓<br />Chance</div>
+          <div className="property red">Indiana Ave<br />$220</div>
+          <div className="property red">Illinois Ave<br />$240</div>
+          <div className="railroad">🚂<br />B&O RR</div>
+          <div className="property yellow">Atlantic Ave<br />$260</div>
+          <div className="property yellow">Ventnor Ave<br />$260</div>
+          <div className="utility">💦<br />Water Works</div>
+          <div className="property yellow">Marvin Gardens<br />$280</div>
         </div>
       </div>
 
-      <div style={{ display: 'flex' }}>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Go</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'brown', fontSize: '10px', lineHeight: '1.2' }}>Mediterranean<br />$60</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Community</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'brown', fontSize: '10px', lineHeight: '1.2' }}>Baltic<br />$60</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Income Tax<br />10% or $200</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Reading<br />$200</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'lightblue', fontSize: '10px', lineHeight: '1.2' }}>Oriental<br />$100</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', fontSize: '10px', lineHeight: '1.2' }}>Chance</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'lightblue', fontSize: '10px', lineHeight: '1.2' }}>Vermont<br />$100</div>
-        <div style={{ width: '70px', height: '70px', border: '1px solid black', textAlign: 'center', backgroundColor: 'lightblue', fontSize: '10px', lineHeight: '1.2' }}>Connecticut<br />$120</div>
+      {/* Bottom Row */}
+      <div className="row">
+        <div className="corner free-parking">🅿️<br />Free Parking</div>
+        <div className="property green">Pacific Ave<br />$300</div>
+        <div className="property green">North Carolina Ave<br />$300</div>
+        <div className="community-chest">🎁<br />Community Chest</div>
+        <div className="property green">Pennsylvania Ave<br />$320</div>
+        <div className="railroad">🚂<br />Short Line RR</div>
+        <div className="chance">❓<br />Chance</div>
+        <div className="property blue">Park Place<br />$350</div>
+        <div className="luxury-tax">💎<br />Luxury Tax</div>
+        <div className="property blue">Boardwalk<br />$400</div>
+        <div className="corner go-to-jail">🚓<br />Go to Jail</div>
       </div>
+
+      {/* CSS Styling Inside JSX */}
+      <style>
+        {`
+          .monopoly-board {
+            display: grid;
+            grid-template-rows: 120px 1fr 120px;
+            grid-template-columns: 120px 1fr 120px;
+            width: 720px;
+            height: 720px;
+            background: limegreen;
+            border: 15px solid black;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+          }
+
+          .row {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-column: 1 / 4;
+          }
+
+          .middle {
+            display: grid;
+            grid-template-columns: 120px 1fr 120px;
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+          }
+
+          .column {
+            display: grid;
+            grid-template-rows: repeat(9, 1fr);
+          }
+
+          .corner {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border: 3px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+          }
+
+          .property, .community-chest, .tax, .railroad, .chance, .utility, .luxury-tax {
+            width: 100%;
+            height: 100%;
+            border: 3px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 12px;
+            transition: transform 0.2s ease-in-out;
+          }
+
+          .property.brown { background: #8B4513; color: white; }
+          .property.light-blue { background: #ADD8E6; color: black; }
+          .property.purple { background: #DDA0DD; color: white; }
+          .property.orange { background: #FFA500; color: white; }
+          .property.red { background: #FF4500; color: white; }
+          .property.yellow { background: #FFD700; color: black; }
+          .property.green { background: #228B22; color: white; }
+          .property.blue { background: #1E90FF; color: white; }
+
+          .property:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          }
+
+          .chance-card, .community-card {
+            width: 140px;
+            height: 70px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            margin: 10px;
+          }
+
+          .chance-card:hover, .community-card:hover {
+            transform: rotate(5deg);
+          }
+
+          .btn {
+            background-color: #FF4500;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            border-radius: 5px;
+            margin: 10px;
+          }
+
+          .btn:hover {
+            background-color: #FF6347;
+          }
+
+          .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        `}
+      </style>
     </div>
   );
 };
