@@ -1,7 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const tokens = [
+  {
+    name: "Scottie Dog",
+    image: "https://m.media-amazon.com/images/I/31QRCkfPrTL._AC_UF894,1000_QL80_.jpg",
+  },
+  {
+    name: "Top Hat",
+    image: "https://media.istockphoto.com/id/471505659/photo/monopoly-top-hat-game-piece.jpg?s=612x612&w=0&k=20&c=dp_HiVwyEofOFISVQRyQ_qJQKR8JWK-uQcOBfsQ7TZ4=",
+  },
+  {
+    name: "Iron",
+    image: "https://wjla.com/resources/media/cb20c219-dbbf-47e7-82c5-8b176335be99-irontokenmonopolyeliminatedwiki_296.jpg?1436532636854",
+  },
+  {
+    name: "Thimble",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXj1B5jrWlpUl38_vkQSBkdVZq6-EkKGvw5w&s",
+  },
+  {
+    name: "Wheelbarrow",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxQlaSEzYZjgbX7vVR7J-AxpSvGj7-wf2T2g&s",
+  },
+  {
+    name: "Shoe",
+    image: "https://c8.alamy.com/comp/CWBY7F/monopoly-boot-CWBY7F.jpg",
+  },
+  {
+    name: "Battleship",
+    image: "https://i.ebayimg.com/images/g/4REAAOSwluNg-yzq/s-l400.jpg",
+  },
+  {
+    name: "Racecar",
+    image: "https://i.ebayimg.com/images/g/8xQAAOSwnbxgMjYb/s-l1200.jpg",
+  },
+];
 
 const RaceCar = () => {
   const [showContent, setShowContent] = useState(false);
+  const [selectedToken, setSelectedToken] = useState({});
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * tokens.length);
+    setSelectedToken(tokens[randomIndex]);
+  }, []);
 
   return (
     <div style={{
@@ -19,11 +60,11 @@ const RaceCar = () => {
       }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXG7zBUICPaePjAgZhwgKPMeYfJjeVIPOHIA&s"
-            alt="Player Icon"
+            src={selectedToken.image}
+            alt={selectedToken.name}
             style={{ width: '30px', marginRight: '10px', filter: 'invert(1)' }} 
           />
-          <h2>Racecar</h2>
+          <h2>{selectedToken.name}</h2>
         </div>
         <div>
           <h2>$1,500</h2>

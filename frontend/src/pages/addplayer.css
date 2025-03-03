@@ -1,0 +1,61 @@
+.addplayerpage-container{
+    text-align: center;
+    padding: 20px;
+    background-color: #d0f5f5;
+    min-height: 100vh;
+    font-family: Arial,sans-serif;
+}
+.game-section{
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    margin-bottom: 30px;
+}
+.current-player, .player-list {
+    background-color: #008080;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    height: 380px;
+    color: white;
+}
+.current-player h2 {
+    margin-top: 0;
+}
+
+.players-List .player-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.button-group ul {
+    background-color: #4d8073;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 2px;
+    margin: 20px;
+    list-style: none;
+}
+.button-group li {
+    flex: 1;
+    text-align: center;
+}
+.button-group button{
+    padding: 10px;
+    background: lightblue;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 10px;
+}
+.button-group li :hover{
+    background-color: rgb(155, 138, 138);
+}
+
+.img-logo{
+    width: 400px;
+    height: 200px;
+    margin-bottom: -50px;
+    
+}
