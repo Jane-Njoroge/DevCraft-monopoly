@@ -28,33 +28,52 @@
     align-items: center;
     margin: 5px 0;
 }
+
 .button-group ul {
     background-color: #4d8073;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     display: flex;
-    padding: 2px;
+    flex-wrap: nowrap;
+    padding: 10px;
     margin: 20px;
     list-style: none;
+    gap: 2px;
 }
 .button-group li {
     flex: 1;
     text-align: center;
 }
 .button-group button{
-    padding: 10px;
+    padding: 12px;
     background: lightblue;
     border: none;
     cursor: pointer;
-    width: 150px;
+    width: 110px;
     border-radius: 10px;
 }
+@media (max-width:1000px) {
+    .button-group ul {
+        background-color: #4d8073;
+        flex-wrap: nowrap;
+    }
+    .button-group button {
+        background: lightblue;
+        width: 110px;
+
+    }
+    .button-group li:hover {
+        background-color:rgb(155, 138, 138) ;
+    }
+}
+
 .button-group li :hover{
     background-color: rgb(155, 138, 138);
 }
 
+
 .img-logo{
-    width: 400px;
+    width: 380px;
     height: 200px;
     margin-bottom: -50px;
     

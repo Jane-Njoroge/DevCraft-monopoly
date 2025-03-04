@@ -2,6 +2,14 @@ import React, { useState,useEffect } from 'react'
 import './addplayer.css'
 import { useNavigate } from 'react-router-dom';
 import logo from './log.png'
+import token1 from './token1.jpeg'
+import token2 from './token2.jpeg'
+import token3 from './token3.jpeg'
+import token4 from './token4.jpeg'
+import token5 from './token5.jpeg'
+import token6 from './token6.jpeg'
+import token7 from './token7.jpeg'
+import token8 from './token8.jpeg'
 
 const AddPlayerPage = () => {
 
@@ -33,14 +41,20 @@ const handleCopyLink  = async () => {
 };
  handleCopyLink();
 }, []);
-//useEffect(() => {
-   // const newGameID = Math.floor(100000 + Math.random() * 900000);
-    //setGameID(newGameID)
-//}, [])
 
 
 
-const tokens = ["Car", "Hat", "Dog", "Boat", "Thimble"]
+
+const tokens = [
+    <img src={token1} alt='token1' style={{width:'20px',height:'20px'}}/>,
+    <img src={token2} alt='token2' style={{width:'20px',height:'20px'}}/>,
+    <img src={token3} alt='token3' style={{width:'20px',height:'20px'}}/>,
+    <img src={token4} alt='token4' style={{width:'20px',height:'20px'}}/>,
+    <img src={token5} alt='token5' style={{width:'20px',height:'20px'}}/>,
+    <img src={token6} alt='token6' style={{width:'20px',height:'20px'}}/>,
+    <img src={token7} alt='token7' style={{width:'20px',height:'20px'}}/>,
+    <img src={token8} alt='token8' style={{width:'20px',height:'20px'}}/>
+]
 
 const getRandomToken = () => {
     return tokens[Math.floor(Math.random() * tokens.length)];
@@ -93,44 +107,6 @@ const addPlayer = async () => {
 
 const hostPlayer = players.find(player => player.isHost);
 const otherPlayers = players.filter(player => !player.isHost);
-
-
-
-
-
-
-
-
-//const addPlayer = async() => {
-   // if(players.length === 0) {
-       // alert("No players found!");
-       // return;
-  //  }
-
-       // const randomIndex = Math.floor(Math.random()* players.length);
-       // const selectedPlayer = players[randomIndex];
-
-        
-       //const token = Math.floor(1000 + Math.random() * 9000);
-      // const token = getRandomToken();
-      // selectedPlayer.token = token;
-
-      // try{
-       // await fetch("https://backend.com/api/update-player", {
-        //    method:"POST",
-          //  headers:{
-          //      "Content-Type":"application/json",
-          //  },
-          //  body:JSON.stringify(selectedPlayer),
-       // });
-      // } catch (error) {
-      //  console.error("Error updating player:",error);
-     //  }
-     //  console.log(`player ${selectedPlayer.name} assigned token: ${token}`);
-       
-//}
-//const hostPlayer = players.find(player => player.isHost);
-//const otherPlayers = players.filter(player => !player.isHost)
 
 
 
