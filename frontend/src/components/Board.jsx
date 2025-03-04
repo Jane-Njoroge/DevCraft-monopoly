@@ -5,67 +5,67 @@ const Board = () => {
     <div className="monopoly-board">
       {/* Top Row */}
       <div className="row">
-        <div className="corner go">GO </div>
-        <div className="property brown">Mediterranean Ave $60</div>
-        <div className="community-chest">Community Chest</div>
-        <div className="property brown">Baltic Ave $60</div>
-        <div className="tax">Income Tax</div>
-        <div className="railroad">Reading RR</div>
-        <div className="property light-blue">Oriental Ave$100</div>
-        <div className="chance"><br />Chance</div>
-        <div className="property light-blue">Vermont Ave $100</div>
-        <div className="property light-blue">Connecticut Ave $120</div>
-        <div className="corner jail">Jail</div>
+        <div className="corner go">GO 🚗</div>
+        <div className="property brown">Mediterranean Ave<br />$60</div>
+        <div className="community-chest">🎁<br />Community Chest</div>
+        <div className="property brown">Baltic Ave<br />$60</div>
+        <div className="tax">💰<br />Income Tax</div>
+        <div className="railroad">🚂<br />Reading RR</div>
+        <div className="property light-blue">Oriental Ave<br />$100</div>
+        <div className="chance">❓<br />Chance</div>
+        <div className="property light-blue">Vermont Ave<br />$100</div>
+        <div className="property light-blue">Connecticut Ave<br />$120</div>
+        <div className="corner jail">🚔<br />Jail</div>
       </div>
 
       {/* Middle Section */}
       <div className="middle">
         <div className="column">
-          <div className="property purple">St. Charles Pl $140</div>
-          <div className="utility">Electric Co.</div>
-          <div className="property purple">States Ave $140</div>
-          <div className="property purple">Virginia Ave $160</div>
-          <div className="railroad">Pennsylvania RR</div>
-          <div className="property orange">St. James Pl $180</div>
-          <div className="community-chest">Community Chest</div>
-          <div className="property orange">Tennessee Ave $180</div>
-          <div className="property orange">New York Ave $200</div>
+          <div className="property purple">St. Charles Pl<br />$140</div>
+          <div className="utility">💡<br />Electric Co.</div>
+          <div className="property purple">States Ave<br />$140</div>
+          <div className="property purple">Virginia Ave<br />$160</div>
+          <div className="railroad">🚂<br />Pennsylvania RR</div>
+          <div className="property orange">St. James Pl<br />$180</div>
+          <div className="community-chest">🎁<br />Community Chest</div>
+          <div className="property orange">Tennessee Ave<br />$180</div>
+          <div className="property orange">New York Ave<br />$200</div>
         </div>
 
         {/* Center Area */}
         <div className="center">
-          <div className="card chance-card"> Chance</div>
-          <div className="card community-card">Community Chest</div>
-          <button className="btn roll"> Roll Dice</button>
-          <button className="btn start"> Start Game</button>
+          <div className="card chance-card">❓ Chance</div>
+          <div className="card community-card">🎁 Community Chest</div>
+          <button className="btn roll">🎲 Roll Dice</button>
+          <button className="btn start">🚀 Start Game</button>
         </div>
 
         <div className="column">
-          <div className="property red">Kentucky Ave $220</div>
-          <div className="chance">Chance</div>
-          <div className="property red">Indiana Ave $220</div>
-          <div className="property red">Illinois Ave $240</div>
-          <div className="railroad">B&O RR</div>
-          <div className="property yellow">Atlantic Ave $260</div>
-          <div className="property yellow">Ventnor Ave $260</div>
-          <div className="utility">Water Works</div>
-          <div className="property yellow">Marvin Gardens $280</div>
+          <div className="property red">Kentucky Ave<br />$220</div>
+          <div className="chance">❓<br />Chance</div>
+          <div className="property red">Indiana Ave<br />$220</div>
+          <div className="property red">Illinois Ave<br />$240</div>
+          <div className="railroad">🚂<br />B&O RR</div>
+          <div className="property yellow">Atlantic Ave<br />$260</div>
+          <div className="property yellow">Ventnor Ave<br />$260</div>
+          <div className="utility">💦<br />Water Works</div>
+          <div className="property yellow">Marvin Gardens<br />$280</div>
         </div>
       </div>
 
       {/* Bottom Row */}
       <div className="row">
-        <div className="corner free-parking">Free Parking</div>
-        <div className="property green">Pacific Ave $300</div>
-        <div className="property green">North Carolina Ave $300</div>
-        <div className="community-chest">Community Chest</div>
-        <div className="property green">Pennsylvania Ave $320</div>
-        <div className="railroad">Short Line RR</div>
-        <div className="chance">Chance</div>
-        <div className="property blue">Park Place $350</div>
-        <div className="luxury-tax">Luxury Tax</div>
-        <div className="property blue">Boardwalk $400</div>
-        <div className="corner go-to-jail">Go to Jail</div>
+        <div className="corner free-parking">🅿️<br />Free Parking</div>
+        <div className="property green">Pacific Ave<br />$300</div>
+        <div className="property green">North Carolina Ave<br />$300</div>
+        <div className="community-chest">🎁<br />Community Chest</div>
+        <div className="property green">Pennsylvania Ave<br />$320</div>
+        <div className="railroad">🚂<br />Short Line RR</div>
+        <div className="chance">❓<br />Chance</div>
+        <div className="property blue">Park Place<br />$350</div>
+        <div className="luxury-tax">💎<br />Luxury Tax</div>
+        <div className="property blue">Boardwalk<br />$400</div>
+        <div className="corner go-to-jail">🚓<br />Go to Jail</div>
       </div>
 
       {/* CSS Styling Inside JSX */}
