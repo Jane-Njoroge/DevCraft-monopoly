@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# DEVCRAFT MONOPOLY- FRONTEND
+**Monopoly** is a real estate trading board game where players buy, sell, and trade properties, aiming to bankrupt their opponents. The game is typically played by 2-8 players and involves rolling dice, purchasing properties, and dealing with various game events, such as paying rent, drawing Chance or Community Chest cards, or landing on "Go to Jail."
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This is the frontend for the **DevCraft Monopoly** game, a web-based implementation of the classic board game **Monopoly**. The frontend allows users to play the game in a browser, interact with various game components, and manage game state.
 
-## Available Scripts
+## TABLE OF CONTENTS
 
-In the project directory, you can run:
+- Description
+- Technologies Used
+- Setup
+- Usage
+- How to contribute
+- License
 
-### `npm start`
+## DESCRIPTION
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The frontend of the Monopoly game provides a user interface for players to interact with the game. The game features include:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Game Setup**: Players can start a new game or join an existing one.
+- **Gameplay**: Players can roll dice, buy properties, pay rent, and interact with various game features.
+- **Game State**: Real-time game updates and player actions are reflected on the board.
+  
+This frontend communicates with the backend API to synchronize game state across players.
 
-### `npm test`
+## TECHNOLOGIES USED
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React.js**: A JavaScript library for building user interfaces.
+- **CSS**: Styling for the game board and user interface.
+- **React Router**: For routing between pages and components.
+- **Axios**: For making API requests to the backend.
 
-### `npm run build`
+## SETUP
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### PREREQUISITES
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Make sure you have the following installed:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js(Recommended version: LTS)
+- npm (Usually comes with Node.js)
+- Git(To clone the repository)
 
-### `npm run eject`
+### INSTALLATION
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository**: 
+   git clone https://github.com/Jane-Njoroge/DevCraft-monopoly-frontend.git
+   cd DevCraft-monopoly-frontend
+2. **Install the dependencies**:
+    npm install
+3. **Run the development server**:
+     npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### USAGE
+- New Game: Start a new monopoly game.
+- Join Game: Join an existing game by entering a game link.
+- Player actions: Roll dice, buy properties, manage money, and more!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### HOW TO CONTRIBUTE
+- **Project Name**: If your project is called something different than "DevCraft Monopoly," change the title and sections accordingly.
+- **Dependencies**: If your frontend uses other technologies or tools not listed, include them in the **Technologies Used** section.
+- **API URL**: If you need to specify where the backend is hosted, you could add a note under **Usage** or **Setup**.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### License
+This project is licensed under the MIT License- see the LICENSE file  for details
