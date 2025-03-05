@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
+const apiBaseUrl = 'http://localhost:5000'; 
+
 const tokens = [
   {
     name: "Scottie Dog",
     image: "https://m.media-amazon.com/images/I/31QRCkfPrTL._AC_UF894,1000_QL80_.jpg",
   },
   {
-    name: "Top Hat",
-    image: "https://media.istockphoto.com/id/471505659/photo/monopoly-top-hat-game-piece.jpg?s=612x612&w=0&k=20&c=dp_HiVwyEofOFISVQRyQ_qJQKR8JWK-uQcOBfsQ7TZ4=",
+    name: "Battleship",
+    image: "https://i.ebayimg.com/images/g/4REAAOSwluNg-yzq/s-l400.jpg",
   },
   {
     name: "Iron",
@@ -18,16 +20,16 @@ const tokens = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXj1B5jrWlpUl38_vkQSBkdVZq6-EkKGvw5w&s",
   },
   {
-    name: "Wheelbarrow",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxQlaSEzYZjgbX7vVR7J-AxpSvGj7-wf2T2g&s",
-  },
-  {
     name: "Shoe",
     image: "https://c8.alamy.com/comp/CWBY7F/monopoly-boot-CWBY7F.jpg",
   },
   {
-    name: "Battleship",
-    image: "https://i.ebayimg.com/images/g/4REAAOSwluNg-yzq/s-l400.jpg",
+    name: "wheelbarrow",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxQlaSEzYZjgbX7vVR7J-AxpSvGj7-wf2T2g&s",
+  },
+  {
+    name: "Top Hat",
+    image: "https://media.istockphoto.com/id/471505659/photo/monopoly-top-hat-game-piece.jpg?s=612x612&w=0&k=20&c=dp_HiVwyEofOFISVQRyQ_qJQKR8JWK-uQcOBfsQ7TZ4=",
   },
   {
     name: "Racecar",
@@ -38,18 +40,44 @@ const tokens = [
 const RaceCar = () => {
   const [showContent, setShowContent] = useState(false);
   const [selectedToken, setSelectedToken] = useState({});
+  const [balance, setBalance] = useState(null); 
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
+    const fetchPlayerBalance = async () => {
+      setIsLoading(true); 
+      try {
+        const response = await fetch(`${apiBaseUrl}/players`); 
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        if (data && data.length > 0) {
+          setBalance(data[0].balance); 
+        } else {
+          console.log("No players found.");
+          setBalance(1500); 
+        }
+      } catch (error) {
+        console.error("Failed to fetch player balance:", error);
+        setBalance(1500); 
+      } finally {
+        setIsLoading(false); 
+      }
+    };
+
     const randomIndex = Math.floor(Math.random() * tokens.length);
     setSelectedToken(tokens[randomIndex]);
+    fetchPlayerBalance(); 
   }, []);
 
   return (
     <div style={{
       width: '500px',
       padding: '20px',
-      backgroundColor: '#008080', 
-      border: '2px solid #808080', 
+      backgroundColor: '#008080',
+      border: '2px solid #808080',
       borderRadius: '5px',
       color: 'white',
     }}>
@@ -62,12 +90,12 @@ const RaceCar = () => {
           <img
             src={selectedToken.image}
             alt={selectedToken.name}
-            style={{ width: '30px', marginRight: '10px', filter: 'invert(1)' }} 
+            style={{ width: '30px', marginRight: '10px', filter: 'invert(1)' }}
           />
           <h2>{selectedToken.name}</h2>
         </div>
         <div>
-          <h2>$1,500</h2>
+          <h2>${isLoading ? "Loading..." : (balance !== null ? balance : "Error")}</h2>
         </div>
         <div style={{ cursor: 'pointer' }} onClick={() => setShowContent(!showContent)}>
           {showContent ? (
@@ -84,51 +112,11 @@ const RaceCar = () => {
 
       {showContent && (
         <div style={{ marginTop: '10px', display: 'flex', flexWrap: 'wrap' }}>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#CD853F' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#CD853F' }}></div>
-
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#DC143C' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#DC143C' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#DC143C' }}></div>
-
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#FFD700' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#FFD700' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#FFD700' }}></div>
-
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#FF00FF' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#FF00FF' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#FF00FF' }}></div>
-
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#00FF7F' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#00FF7F' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#00FF7F' }}></div>
-
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#00BFFF' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: '#00BFFF' }}></div>
-
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: 'white' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: 'white' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: 'white' }}></div>
-          <div style={{ width: '30px', height: '30px', border: '1px solid black', margin: '5px', backgroundColor: 'white' }}></div>
         </div>
       )}
 
       {showContent && (
         <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <svg width="20" height="20" viewBox="0 0 20 20">
-              <rect x="2" y="2" width="16" height="10" fill="#32CD32" rx="2" />
-              <polygon points="10,12 6,18 14,18" fill="#32CD32" />
-            </svg>
-            <span>0</span>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <svg width="20" height="20" viewBox="0 0 20 20">
-              <rect x="2" y="2" width="16" height="10" fill="#FF0000" rx="2" />
-              <polygon points="10,12 6,18 14,18" fill="#FF0000" />
-            </svg>
-            <span>0</span>
-          </div>
         </div>
       )}
     </div>
