@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "script": "^0.1.4",
+    "string-width-cjs": "^5.1.1"
+  }
+}
