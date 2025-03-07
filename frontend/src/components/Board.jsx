@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:5000');
 
 const Dice = ({ value }) => {
     return (
@@ -33,6 +36,44 @@ const Board = ({ selectedToken }) => {
     const [playerName, setPlayerName] = useState('');
     const [players, setPlayers] = useState([]);
     const [tokenPosition, setTokenPosition] = useState(0);
+
+    useEffect(() => {
+      const fetchProperties = async () => {
+          try {
+              const response = await axios.get('http://localhost:5000/properties');
+              setProperties(response.data);
+          } catch (error) {
+              console.error(error);
+          }
+      };
+
+      const fetchPlayers = async () => {
+          try {
+              const response = await axios.get('http://localhost:5000/players');
+              if (response.status === 200) {
+                  setPlayers(response.data);
+              } else {
+                  console.error("Failed to fetch players:", response.status);
+              }
+          } catch (error) {
+              console.error("Error fetching players:", error);
+          }
+      };
+
+      fetchProperties();
+      fetchPlayers();
+  }, []);
+
+  
+  useEffect(() => {
+      socket.on('update_position', (updatedPosition) => {
+          setTokenPosition(updatedPosition);
+      });
+
+      return () => {
+          socket.off('update_position');
+      };
+  }, []);
 
     const createPlayer = async () => {
         try {
